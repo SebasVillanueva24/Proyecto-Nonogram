@@ -51,6 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mCellPrefab: {fileID: 4092979599673968977, guid: 4330355a1c4f1d540a65c19caab9835e,
     type: 3}
+  mParentCanvas: {fileID: 0}
+  parentRT: {fileID: 0}
 --- !u!223 &4151834442145875480
 Canvas:
   m_ObjectHideFlags: 0

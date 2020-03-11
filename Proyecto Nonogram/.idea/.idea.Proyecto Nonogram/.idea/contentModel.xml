@@ -6,6 +6,7 @@
     <e p="C:\Users\Sebas Villanueva\Documents\GitHub\Proyecto-Nonogram\Proyecto Nonogram" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="2x3.txt" t="Include" />
         <e p="Scripts" t="Include">
           <e p="First Video" t="Include">
             <e p="Board.cs" t="Include" />

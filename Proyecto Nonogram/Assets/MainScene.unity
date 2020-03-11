@@ -175,7 +175,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.34158066, g: 0.41516116, b: 0.7169812, a: 0}
+  m_BackGroundColor: {r: 0.3001513, g: 0.45710897, b: 0.6698113, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -287,22 +287,22 @@ PrefabInstance:
     - target: {fileID: 2934134499846674709, guid: 03f9d105a11751441a773763ffa13941,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 79.69922
+      value: 196.40039
       objectReference: {fileID: 0}
     - target: {fileID: 2934134499846674709, guid: 03f9d105a11751441a773763ffa13941,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -11.400391
+      value: -141.7002
       objectReference: {fileID: 0}
     - target: {fileID: 2934134499846674709, guid: 03f9d105a11751441a773763ffa13941,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1029.3
+      value: -724
       objectReference: {fileID: 0}
     - target: {fileID: 2934134499846674709, guid: 03f9d105a11751441a773763ffa13941,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -359.4
+      value: -350.4
       objectReference: {fileID: 0}
     - target: {fileID: 2934134499846674709, guid: 03f9d105a11751441a773763ffa13941,
         type: 3}
@@ -339,6 +339,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PR_Tablero
       objectReference: {fileID: 0}
+    - target: {fileID: 4272287214958061241, guid: 03f9d105a11751441a773763ffa13941,
+        type: 3}
+      propertyPath: mParentCanvas
+      value: 
+      objectReference: {fileID: 1204220802}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03f9d105a11751441a773763ffa13941, type: 3}
 --- !u!1 &1204220802

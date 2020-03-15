@@ -41,31 +41,24 @@ public class Board : MonoBehaviour
       ReadFile(readPath);
 
       char[] separator = {',',' '};
-      String[] separator2 = {"FILAS", "COLUMNAS"};
       String[] size = textArray[0].Split(separator);
       
       
-      int rows = 11;
-      int columns = 11;
+      int rows = Int32.Parse(size[0].ToString());
+      int columns =  Int32.Parse(size[2].ToString());
       
-      Cell[,] mAllCells = new Cell[columns, rows];
-
-      String[] text = textArray.ToArray();
+      Cell[,] mAllCells = new Cell[rows, columns];
       
-      Type t = textArray[0].GetType();
-
-      Type a1 = typeof(String[]);
-
-      for (int x = 0; x < columns; x++)
+      for (int y = 0; y < rows; y++)
       {
-         for (int y = 0; y < rows; y++)
+         for (int x = 0; x < columns; x++)
          {
             
             GameObject newCell = Instantiate(mCellPrefab, transform);
 
             RectTransform rectTransform = newCell.GetComponent<RectTransform>();
 
-            if (rows > 10)
+            if (rows > 11)
             {
                if (rows > 15)
                {
@@ -85,34 +78,42 @@ public class Board : MonoBehaviour
                rectTransform.anchoredPosition = new Vector2((x * 75) + 300, (y * 75) + 50);
             }
 
-            mAllCells[x, y] = newCell.GetComponent<Cell>();
-            mAllCells[x, y].Setup(new Vector2Int(x, y), this);
+            mAllCells[y, x] = newCell.GetComponent<Cell>();
+            mAllCells[y, x].Setup(new Vector2Int(x, y), this);
          }
       }
 
       int offset = 50;
+      int contadorTextoFilas = 1 + rows;
       
       for (int x = 0; x < rows; x++)
       {
-         mClueCellPrefab.GetComponent<RectTransform>().sizeDelta = new Vector2(200,50);
          GameObject newCell2 = Instantiate(mClueCellPrefab, transform);
          RectTransform newCellR = newCell2.GetComponent<RectTransform>();
-         newCellR.sizeDelta = new Vector2(200,50);
+         newCellR.sizeDelta = new Vector2(200,75);
          newCellR.anchoredPosition = new Vector2((mAllCells[0, 0].MRectTransform.anchoredPosition.x)-137,offset);
-         offset = offset + 50;
+         newCell2.GetComponentInChildren<Text>().text = textArray[contadorTextoFilas];
+         contadorTextoFilas--;
+         offset = offset + 75;
       }
       
-      int offsetColumnas = 300;
+      print(contadorTextoFilas);
       
-      for (int x = 0; x < columns; x++)
+      float offsetColumnas = mAllCells[rows-1, 0].MRectTransform.anchoredPosition.x;
+      int contadorTextoColumnas = contadorTextoFilas + rows + 2;
+      
+      for (int y = 0; y < columns; y++)
       {
          GameObject newCell2 = Instantiate(mClueCellPrefab2, transform);
          RectTransform newCellR = newCell2.GetComponent<RectTransform>();
-         newCellR.sizeDelta = new Vector2(50,200);
-         newCellR.anchoredPosition = new Vector2(offsetColumnas,(mAllCells[0, columns-1].MRectTransform.anchoredPosition.y)+150);
-         offsetColumnas = offsetColumnas + 50;
+         newCellR.sizeDelta = new Vector2(75,200);
+         newCellR.anchoredPosition = new Vector2(offsetColumnas,(mAllCells[rows-1, 0].MRectTransform.anchoredPosition.y)+150);
+         newCell2.GetComponentInChildren<Text>().text = textArray[contadorTextoColumnas];
+         contadorTextoColumnas++;
+         offsetColumnas = offsetColumnas + 75f;
       }
 
+      
       /*for (int x = 0; x < 5; x+=2)
       {
          for (int y  = 0; y  < 5; y++)

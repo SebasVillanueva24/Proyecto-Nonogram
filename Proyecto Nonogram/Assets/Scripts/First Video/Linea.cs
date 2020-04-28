@@ -20,7 +20,7 @@ namespace Nonograma
 
         public Linea(string pDatos)
         {
-            datos = pDatos.Split(",");
+            datos = pDatos.Split(',');
 
         }
 

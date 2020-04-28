@@ -10,8 +10,12 @@
         <e p="Scripts" t="Include">
           <e p="First Video" t="Include">
             <e p="Board.cs" t="Include" />
+            <e p="Casilla.cs" t="Include" />
             <e p="Cell.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
+            <e p="Linea.cs" t="Include" />
+            <e p="Matriz.cs" t="Include" />
+            <e p="Program.cs" t="Include" />
           </e>
         </e>
       </e>

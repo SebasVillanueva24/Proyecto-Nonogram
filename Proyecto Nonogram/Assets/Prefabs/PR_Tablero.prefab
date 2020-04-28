@@ -51,9 +51,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mCellPrefab: {fileID: 4092979599673968977, guid: 4330355a1c4f1d540a65c19caab9835e,
     type: 3}
+  mClueCellPrefab: {fileID: 7795790168901484303, guid: 9286756f099154f41a0cfee28963a355,
+    type: 3}
+  mClueCellPrefab2: {fileID: 4830207566262143300, guid: 48037f4d482acb94393cc06891f13113,
+    type: 3}
   mParentCanvas: {fileID: 0}
   filePath: 
-  whiteImg: {fileID: 21300000, guid: a345e7de9ec14e94c88a044c598c0569, type: 3}
   readPath: 
 --- !u!223 &4151834442145875480
 Canvas:

@@ -9,13 +9,13 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 
-namespace Nonograma 
+namespace Nonograma
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager2 : MonoBehaviour
     {
 
         public Board mBoard;
-        public Matriz tablero; 
+        public Matriz tablero;
         int color = 0;
 
         void Start()
@@ -63,10 +63,8 @@ namespace Nonograma
             mBoard.Create(file);
 
             tablero.porPintar = mBoard.mAllCells;
-            //mBoard.mAllCells[0, 0].GetComponent<Image>().color = new Color32(0, 255, 225, 100);
 
-            //tablero.celdasPorPintar[0, 0].transform.GetChild(0).GetComponent<Image>.color = new Color32(0, 255, 225, 100);
-            tablero.animado = true;
+            tablero.animado = false;
 
             tablero.B(0, 0);
 
@@ -74,27 +72,7 @@ namespace Nonograma
 
         }
 
-        void Update()
-        {
-            //if (color <= 4)
-            //{
-            //    mBoard.mAllCells[color,color ].GetComponent<Image>().color = new Color32(0, 255, 225, 100);
-            //    color++;
-            //    Thread.Sleep(1000);
-
-            //}
-            if (tablero.posPintadas.Count != 0)
-            {
-                string ultimo = tablero.posPintadas.Peek().ToString();
-
-                int varx = Int16.Parse(ultimo[1].ToString());
-                int vary = Int16.Parse(ultimo[4].ToString());
-                mBoard.mAllCells[varx, vary].GetComponent<Image>().color = new Color32(0, 255, 225, 100);
-                tablero.posPintadas.Pop();
-                Thread.Sleep(1000);
-            }
-
-        }
+        
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Nonograma
@@ -47,37 +48,9 @@ namespace Nonograma
 
             Matriz tablero = new Matriz(datosFilas, datosColumnas, tamañoMatriz);
 
-            bool backtracking(Matriz nTablero)
-            {
-                if (nTablero.buscarVacio())
-                {
-                    Casilla n = nTablero.sacarVacio();
-                    nTablero.pintar(n);
-                    if(backtracking(nTablero))
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        n.setValor('x');
-                    }
-                }
-                else
-                {
-                    return true;
-                }
+            //Console.WriteLine(tablero.validar2(1, 2));
 
-                return false;
-                
-
-            }
-
-
-
-            tablero.pistas();
-
-            backtracking(tablero);
-            tablero.mostrar();
+            tablero.B(0, 0);
 
 
         }

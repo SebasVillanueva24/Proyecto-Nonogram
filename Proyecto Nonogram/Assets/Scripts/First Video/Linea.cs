@@ -11,7 +11,7 @@ namespace Nonograma
 
         bool enable = true;
 
-        int casillasPintadas = 0;
+        public int casillasPintadas = 0;
 
         int casilasBloqueadas = 0;
 
@@ -35,10 +35,15 @@ namespace Nonograma
             casillas.Add(nCasilla);
         }
 
-
-        void bloquear()
+        public void desabilitar()
         {
-          
+            enable = false;
+        }
+
+
+        public void bloquear()
+        {
+
             for (int i = 0; i < casillas.Count; i++)
             {
                 if (casillas[i].getValor() != 'p')
@@ -46,7 +51,8 @@ namespace Nonograma
                     casillas[i].setValor('x');
                 }
             }
-
+            enable = false;
+  
         }
 
         public void actualizar()
@@ -70,6 +76,29 @@ namespace Nonograma
 
         }
 
+        public string[] getDatos()
+        {
+
+            return datos;
+
+        }
+
+
+        public void limpiar2()
+        {
+
+            if (datos.Length == 1)
+            {
+                if (casillasPintadas == Int16.Parse(datos[0]))
+                {
+                    //bloquear();
+                    datos[0] = "0";
+                    enable = false;
+                }
+
+            }
+        }
+
 
         public void limpiar()
         {
@@ -77,7 +106,7 @@ namespace Nonograma
 
             if (enable && casillasPintadas != 0)
             {
-                Console.WriteLine(Int16.Parse(datos[0]));
+                //Console.WriteLine(Int16.Parse(datos[0]));
                 if (datos.Length == 1)
                 {
                     if (casillasPintadas == Int16.Parse(datos[0]))
@@ -135,15 +164,38 @@ namespace Nonograma
                                 {
                                     casillas[i].setValor('x');
                                     cantPintadas = 0;
-                                    //datos[p] = "0";
+                                    datos[p] = "0";
                                     break;
                                 }
                             }
+                            break;
                         }
                     }
                 }
             }
 
+        }
+
+        public bool validarDatos()
+        {
+            if(enable)
+            {
+                bool bandera = false;
+                for (int d = 0; d < datos.Length; d++)
+                {
+                    if (Int16.Parse(datos[d]) != 0)
+                    {
+                        bandera = true;
+                    }
+                }
+                return bandera;
+            }
+            else
+            {
+                return false;
+            }
+
+            
         }
 
         public void llenar()
@@ -186,6 +238,7 @@ namespace Nonograma
                         if ((casillasPintadas) < casillas.Count)
                         {
                             casillas[casillasPintadas].setValor('x');
+                            //datos[i] = "0";
                             casillasPintadas++;
                         }
 

@@ -200,12 +200,12 @@ namespace Nonograma
 
                 for (int e = 0; e <= cantE - 1; e++)
                 {
-                    Debug.Log(tempPintadas.Pop() + " borrado");
+                    tempPintadas.Pop();
                 }
 
                 foreach (ValueTuple<int, int> element in tempPintadas)
                 {
-                    Debug.Log(element);
+                    //Debug.Log(element);
                 }
 
 
@@ -222,7 +222,7 @@ namespace Nonograma
 
             }
 
-            if (vary < 4)
+            if (vary < cantFilas-1)
             {
                 B(varx, vary + 1);
             }
@@ -374,7 +374,7 @@ namespace Nonograma
                 //Console.WriteLine("------------------------");
                 foreach (ValueTuple<int, int> element in posPintadas)
                 {
-                   Debug.Log(element);
+                    //Debug.Log(element);
                 }
 
                 tempPintadas.Clear();
@@ -414,7 +414,7 @@ namespace Nonograma
 
 
 
-                if (vary < 4)
+                if (vary < cantFilas-1)
                 {
                     B(varx, vary + 1);
                 }
@@ -587,13 +587,13 @@ namespace Nonograma
             //Console.WriteLine("------------------------");
             foreach (ValueTuple<int, int> element in posPintadas)
             {
-                Debug.Log(element);
+                //Debug.Log(element);
             }
 
             tempPintadas.Clear();
             posRestringida.Clear();
 
-            if (vary < 4)
+            if (vary < cantFilas-1)
             {
                 B(varx, vary + 1);
             }
@@ -841,10 +841,7 @@ namespace Nonograma
                                 }
 
                             }
-                            else
-                            {
-                                Debug.Log(" que pedo ");
-                            }
+
                         }
 
 
@@ -965,7 +962,7 @@ namespace Nonograma
                                     }
                                     else
                                     {
-                                        Debug.Log(" son iguales ");
+                                        //Debug.Log(" son iguales ");
 
                                     }
                                 }
@@ -1181,6 +1178,10 @@ namespace Nonograma
 
         public void B(int x, int y)
         {
+            var watch = new System.Diagnostics.Stopwatch();
+
+            watch.Start();
+
             if (x < cantFilas) //x != cantFilas &&
             {
                 int y2 = y;
@@ -1218,7 +1219,7 @@ namespace Nonograma
                     //Console.WriteLine(" ---------------- ");
                     foreach (ValueTuple<int, int> element in tempPintadas)
                     {
-                        Debug.Log (element);
+                        //Debug.Log (element);
                     }
 
                     //Console.WriteLine(" ---------------- ");
@@ -1287,19 +1288,25 @@ namespace Nonograma
 
                 foreach (ValueTuple<int, int> element in posPintadas)
                 {
-                    Debug.Log(element);
-                    if(!animado)
+
+                    if (!animado)
                     {
                         porPintar[element.Item1, element.Item2].GetComponent<Image>().color = new Color32(0, 255, 225, 100);
                     }
-                    
+
                 }
+
+
                 //Environment.Exit(0);
 
             }
+
+            watch.Stop();
+
+            Debug.Log($"Execution Time: {watch.ElapsedMilliseconds} ms");
         }
 
-        
+
     }
 }
 

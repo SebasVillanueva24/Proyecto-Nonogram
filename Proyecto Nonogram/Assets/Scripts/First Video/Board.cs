@@ -12,6 +12,7 @@ public class Board : MonoBehaviour
     public GameObject mCellPrefab;
     public GameObject mClueCellPrefab;
     public GameObject mClueCellPrefab2;
+    public GameObject mClueCellPrefab10x10;
     public GameObject mParentCanvas;
     public string filePath;
 
@@ -114,9 +115,9 @@ public class Board : MonoBehaviour
             newCell2.GetComponentInChildren<Text>().text = textArray[contadorTextoColumnas];
             contadorTextoColumnas++;
             offsetColumnas = offsetColumnas + 75f;
-        }        
+        }
 
- 
+
 
 
         /*for (int x = 0; x < 5; x+=2)

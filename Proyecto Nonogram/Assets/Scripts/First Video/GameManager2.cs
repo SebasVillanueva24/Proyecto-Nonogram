@@ -20,6 +20,7 @@ namespace Nonograma
 
         void Start()
         {
+
             string file = EditorUtility.OpenFilePanel("Seleccionar nivel", "", "txt");
 
             StreamReader archivo = new StreamReader(file);  // NOMBRE DEL ARCHIVO
@@ -59,7 +60,6 @@ namespace Nonograma
 
             tablero = new Matriz(datosFilas, datosColumnas, tamañoMatriz);
 
-            //Console.WriteLine(tablero.validar2(1, 2));
             mBoard.Create(file);
 
             tablero.porPintar = mBoard.mAllCells;
@@ -67,13 +67,7 @@ namespace Nonograma
             tablero.animado = false;
 
             tablero.B(0, 0);
-
-            
-
         }
-
-        
-
     }
 }
 

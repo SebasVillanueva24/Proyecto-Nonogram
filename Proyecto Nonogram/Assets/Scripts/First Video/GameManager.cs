@@ -62,15 +62,21 @@ namespace Nonograma
             //Console.WriteLine(tablero.validar2(1, 2));
             mBoard.Create(file);
 
-            tablero.porPintar = mBoard.mAllCells;
-            //mBoard.mAllCells[0, 0].GetComponent<Image>().color = new Color32(0, 255, 225, 100);
+            //tablero.porPintar = mBoard.mAllCells;
+            ////mBoard.mAllCells[0, 0].GetComponent<Image>().color = new Color32(0, 255, 225, 100);
 
-            //tablero.celdasPorPintar[0, 0].transform.GetChild(0).GetComponent<Image>.color = new Color32(0, 255, 225, 100);
+            ////tablero.celdasPorPintar[0, 0].transform.GetChild(0).GetComponent<Image>.color = new Color32(0, 255, 225, 100);
             tablero.animado = true;
+
+            var watch = new System.Diagnostics.Stopwatch();
+
+            watch.Start();
 
             tablero.B(0, 0);
 
-            
+            watch.Stop();
+
+            Debug.Log($"Execution Time: {watch.ElapsedMilliseconds} ms");
 
         }
 

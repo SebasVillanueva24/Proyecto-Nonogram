@@ -455,6 +455,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4830207566262143300, guid: 48037f4d482acb94393cc06891f13113,
         type: 3}
+    - target: {fileID: 4272287214958061241, guid: 03f9d105a11751441a773763ffa13941,
+        type: 3}
+      propertyPath: mClueCellPrefab10x10
+      value: 
+      objectReference: {fileID: 7795790168901484303, guid: f49bfbe2712636942b9a0e3f827df766,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03f9d105a11751441a773763ffa13941, type: 3}
 --- !u!1 &1942047598
